@@ -1,0 +1,11 @@
+
+--- Estructura basica endpoint
+app.MapGet("/habitatges/{id}", (int id) =>
+{
+    Habitatge? trobat = habitatges.FirstOrDefault(h => h.Id == id);
+
+    if (trobat == null)
+        return Results.NotFound();
+
+    return Results.Ok(trobat);
+});
