@@ -5,43 +5,43 @@ var builder = WebApplication.CreateBuilder(args);
 
 var app = builder.Build();
 
-List<Habitatge> habitatges = new List<Habitatge>
-{
+// List<Habitatge> habitatges = new List<Habitatge>
+// {
 
-    // Joan Pujol (12345678A) - té habitatges a Figueres i Roses (per comprovar que no barreja pobles)
-    new Habitatge("1", "Carrer Major 12", "Figueres", "17600", TipusImmoble.Pis, 90, 3, 1, "Joan Pujol", "12345678A"),
-    new Habitatge("2", "Carrer Girona 8", "Figueres", "17600", TipusImmoble.Casa, 140, 6, 3, "Joan Pujol", "12345678A"),   // família nombrosa + menors
-    new Habitatge("3", "Carrer Nou 1", "Figueres", "17600", TipusImmoble.Terreny, 500, 0, 0, "Joan Pujol", "88888888A"),   // terreny a Figueres
-    new Habitatge("4", "Carrer del Port 5", "Roses", "17480", TipusImmoble.Casa, 180, 7, 2, "Joan Pujol", "88888888A"),    // família nombrosa + menors a Roses (no ha de sortir a Figueres)
+//     // Joan Pujol (12345678A) - té habitatges a Figueres i Roses (per comprovar que no barreja pobles)
+//     new Habitatge("1", "Carrer Major 12", "Figueres", "17600", TipusImmoble.Pis, 90, 3, 1, "Joan Pujol", "12345678A"),
+//     new Habitatge("2", "Carrer Girona 8", "Figueres", "17600", TipusImmoble.Casa, 140, 6, 3, "Joan Pujol", "12345678A"),   // família nombrosa + menors
+//     new Habitatge("3", "Carrer Nou 1", "Figueres", "17600", TipusImmoble.Terreny, 500, 0, 0, "Joan Pujol", "88888888A"),   // terreny a Figueres
+//     new Habitatge("4", "Carrer del Port 5", "Roses", "17480", TipusImmoble.Casa, 180, 7, 2, "Joan Pujol", "88888888A"),    // família nombrosa + menors a Roses (no ha de sortir a Figueres)
 
-    // Marta Vila (87654321B) - només a Figueres, sense família nombrosa ni menors (cas simple)
-    new Habitatge("5", "Avinguda Catalunya 3", "Figueres", "17600", TipusImmoble.Casa, 100, 2, 0, "Marta Vila", "87654321B"),
-    new Habitatge("6", "Carrer Ample 7", "Figueres", "17600", TipusImmoble.Pis, 75, 2, 0, "Marta Vila", "87654321B"),
+//     // Marta Vila (87654321B) - només a Figueres, sense família nombrosa ni menors (cas simple)
+//     new Habitatge("5", "Avinguda Catalunya 3", "Figueres", "17600", TipusImmoble.Casa, 100, 2, 0, "Marta Vila", "87654321B"),
+//     new Habitatge("6", "Carrer Ample 7", "Figueres", "17600", TipusImmoble.Pis, 75, 2, 0, "Marta Vila", "87654321B"),
 
-    // Pere Soler (34567890C) - família nombrosa però sense menors
-    new Habitatge("7", "Carrer Tramuntana 9", "Figueres", "17600", TipusImmoble.Casa, 200, 6, 0, "Pere Soler", "34567890C"),  // família nombrosa sense menors
+//     // Pere Soler (34567890C) - família nombrosa però sense menors
+//     new Habitatge("7", "Carrer Tramuntana 9", "Figueres", "17600", TipusImmoble.Casa, 200, 6, 0, "Pere Soler", "34567890C"),  // família nombrosa sense menors
 
-    // Anna Serra (45678901D) - menors però no família nombrosa
-    new Habitatge("8", "Passeig Maritim 40", "Figueres", "17600", TipusImmoble.Casa, 95, 3, 2, "Anna Serra", "45678901D"),   // menors però no família nombrosa
+//     // Anna Serra (45678901D) - menors però no família nombrosa
+//     new Habitatge("8", "Passeig Maritim 40", "Figueres", "17600", TipusImmoble.Casa, 95, 3, 2, "Anna Serra", "45678901D"),   // menors però no família nombrosa
 
-    // Laura Bosch (56789012E) - tots els tipus d'immoble al mateix poble
-    new Habitatge("9", "Carrer Nou 3", "Roses", "17480", TipusImmoble.Pis, 60, 1, 0, "Laura Bosch", "56789012E"),
-    new Habitatge("10", "Carrer Nou 5", "L'Escala", "17130", TipusImmoble.Casa, 120, 4, 1, "Laura Bosch", "56789012E"),         // menors
-    new Habitatge("11", "Carrer Nou 7", "Roses", "17480", TipusImmoble.Terreny, 300, 0, 0, "Laura Bosch", "56789012E"),
+//     // Laura Bosch (56789012E) - tots els tipus d'immoble al mateix poble
+//     new Habitatge("9", "Carrer Nou 3", "Roses", "17480", TipusImmoble.Pis, 60, 1, 0, "Laura Bosch", "56789012E"),
+//     new Habitatge("10", "Carrer Nou 5", "L'Escala", "17130", TipusImmoble.Casa, 120, 4, 1, "Laura Bosch", "56789012E"),         // menors
+//     new Habitatge("11", "Carrer Nou 7", "Roses", "17480", TipusImmoble.Terreny, 300, 0, 0, "Laura Bosch", "56789012E"),
 
-    // David Roca (67890123F) - habitant de Vallfort de les Manies (descompte 25% secret)
-    new Habitatge("12", "Carrer Major 1", "Vallfort de les Manies", "17970", TipusImmoble.Casa, 250, 7, 3, "David Roca", "67890123F"),  // família nombrosa + menors + descompte secret
-    new Habitatge("13", "Carrer Major 3", "Vallfort de les Manies", "17970", TipusImmoble.Terreny, 1000, 0, 0, "David Roca", "67890123F"),
+//     // David Roca (67890123F) - habitant de Vallfort de les Manies (descompte 25% secret)
+//     new Habitatge("12", "Carrer Major 1", "Vallfort de les Manies", "17970", TipusImmoble.Casa, 250, 7, 3, "David Roca", "67890123F"),  // família nombrosa + menors + descompte secret
+//     new Habitatge("13", "Carrer Major 3", "Vallfort de les Manies", "17970", TipusImmoble.Terreny, 1000, 0, 0, "David Roca", "67890123F"),
 
-    // Núria Casas (78901234G) - habitant de Bellpeluda del Camí (descompte 25% secret)
-    new Habitatge("14", "Avinguda Pau 2", "L'Escala", "17130", TipusImmoble.Pis, 80, 5, 0, "Nuria Casas", "78901234G"),
-    new Habitatge("15", "Avinguda Pau 4", "Bellpeluda del Camí", "17971", TipusImmoble.Casa, 150, 4, 2, "Nuria Casas", "78901234G"),    // menors
+//     // Núria Casas (78901234G) - habitant de Bellpeluda del Camí (descompte 25% secret)
+//     new Habitatge("14", "Avinguda Pau 2", "L'Escala", "17130", TipusImmoble.Pis, 80, 5, 0, "Nuria Casas", "78901234G"),
+//     new Habitatge("15", "Avinguda Pau 4", "Bellpeluda del Camí", "17971", TipusImmoble.Casa, 150, 4, 2, "Nuria Casas", "78901234G"),    // menors
 
-    // Ajuntament (P1706200I) - només terrenys
-    new Habitatge("16", "Zona Industrial", "Roses", "17480", TipusImmoble.Terreny, 2000, 0, 0, "Ajuntament de Roses", "P1706200I"),
-    new Habitatge("17", "Zona Nord", "Roses", "17480", TipusImmoble.Terreny, 1500, 0, 0, "Ajuntament de Roses", "P1706200I"),
+//     // Ajuntament (P1706200I) - només terrenys
+//     new Habitatge("16", "Zona Industrial", "Roses", "17480", TipusImmoble.Terreny, 2000, 0, 0, "Ajuntament de Roses", "P1706200I"),
+//     new Habitatge("17", "Zona Nord", "Roses", "17480", TipusImmoble.Terreny, 1500, 0, 0, "Ajuntament de Roses", "P1706200I"),
 
-};
+// };
 
 app.MapGet("/", () => "Funciona");
 //llista habitatges
