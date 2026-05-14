@@ -1,5 +1,7 @@
 namespace ConsellComarcalApi.Models;
 
+using Microsoft.EntityFrameworkCore;
+
 public class AppDbContext : DbContext
 {
     public DbSet<Edificacio> Edificacions { get; set; }
@@ -11,6 +13,7 @@ public class AppDbContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder options)
     {
-        options.UseSqlServer("Server=localhost;Database=MiDB;Trusted_Connection=true;");
+        var connectionString = "Server=localhost;Database=comarcal;User=root;Password=president;";
+        options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
     }
 }

@@ -1,9 +1,65 @@
 using ConsellComarcalApi.Models;
 using System.Text.Json.Serialization;
+using System.Text.Json;
+using Microsoft.EntityFrameworkCore;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
 var app = builder.Build();
+
+using var db = new AppDbContext();
+
+var registres = db.Edificacions
+    .Include(e => e.Poble)
+    .Include(e => e.Contribuent)
+    .Include(e => e.Tipus)
+    .Select(e=> new
+    {
+        Identificador = e.Id,
+        Adreca = e.Direccio,
+        Poblacio = e.Poble.Nom,
+        CodiPostal = e.Poble.CodiPostal,
+        TipusImmoble = e.Tipus.Id-1,
+        MetresQuadrats = e.MetresQuadrats,
+        HabitantsImmoble = e.Habitants,
+        NumMenorsImmoble = e.Menors,
+        NomContribuent = e.Contribuent.Nom,
+        DNIContribuent = e.Contribuent.Dni,
+        EsFamiliaNumerosa = e.Habitants >5
+
+    }
+).ToList();
+
+List<Habitatge> habitatges = new();
+foreach (var r in registres)
+{
+    Habitatge h = new(
+        r.Identificador.ToString(),
+        r.Adreca,
+        r.Poblacio,
+        r.CodiPostal,
+        (TipusImmoble)r.TipusImmoble,
+        r.MetresQuadrats,
+        r.HabitantsImmoble,
+        r.NumMenorsImmoble,
+        r.NomContribuent,
+        r.DNIContribuent
+    );
+    habitatges.Add(h);
+}
+// Console.WriteLine(todas.Count);
+
+// foreach(var t in todas)
+// {
+//     Console.WriteLine(JsonSerializer.Serialize(t, new JsonSerializerOptions {WriteIndented = true}));
+// }
+
+
+
+
+
+
 
 // List<Habitatge> habitatges = new List<Habitatge>
 // {

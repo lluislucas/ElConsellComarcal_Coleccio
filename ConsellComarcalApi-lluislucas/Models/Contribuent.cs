@@ -1,5 +1,7 @@
 namespace ConsellComarcalApi.Models;
+using System.ComponentModel.DataAnnotations.Schema;
 
+[Table("contribuents")]
 public class Contribuent
 {
     public int Id { get; set; }

@@ -27,3 +27,10 @@ C:\Users\lluis\Desktop\Codi\Xavi\Level3\Projectes\ConsellComarcalApi-lluislucas\
 C:\Users\lluis\Desktop\Codi\Xavi\Level3\Projectes\ConsellComarcalApi-lluislucas\obj\Debug\net9.0\ConsellComarcalApi.pdb
 C:\Users\lluis\Desktop\Codi\Xavi\Level3\Projectes\ConsellComarcalApi-lluislucas\obj\Debug\net9.0\ConsellComarcalApi.genruntimeconfig.cache
 C:\Users\lluis\Desktop\Codi\Xavi\Level3\Projectes\ConsellComarcalApi-lluislucas\obj\Debug\net9.0\ref\ConsellComarcalApi.dll
+C:\Users\lluis\Desktop\Codi\Xavi\Level3\Projectes\ConsellComarcalApi-lluislucas\obj\Debug\net9.0\ConsellComarcalApi.csproj.AssemblyReference.cache
+C:\Users\lluis\Desktop\Codi\Xavi\Level3\Projectes\ConsellComarcalApi-lluislucas\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\lluis\Desktop\Codi\Xavi\Level3\Projectes\ConsellComarcalApi-lluislucas\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\lluis\Desktop\Codi\Xavi\Level3\Projectes\ConsellComarcalApi-lluislucas\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\lluis\Desktop\Codi\Xavi\Level3\Projectes\ConsellComarcalApi-lluislucas\bin\Debug\net9.0\MySqlConnector.dll
+C:\Users\lluis\Desktop\Codi\Xavi\Level3\Projectes\ConsellComarcalApi-lluislucas\bin\Debug\net9.0\Pomelo.EntityFrameworkCore.MySql.dll
+C:\Users\lluis\Desktop\Codi\Xavi\Level3\Projectes\ConsellComarcalApi-lluislucas\obj\Debug\net9.0\ConsellC.677702EC.Up2Date
