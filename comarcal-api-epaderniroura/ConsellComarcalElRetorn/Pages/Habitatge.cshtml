@@ -1,0 +1,20 @@
+@page "{Població}"
+@model ConsellComarcalElRetorn.Pages.Habitatge
+
+@if(Model.Dades != null)
+{
+  <h2>Habitatges de @Model.Població</h2>
+  @foreach (var habitatge in Model.Dades)
+  {
+    <div>
+      <p>...............................................</p>
+      <a href="/DadesDeHabitatge/@habitatge.Identificador">Habitatge de @habitatge.NomPagaTaxa (Identificador: @habitatge.Identificador)</a>
+    </div>
+  }
+}
+
+else
+{
+  <p>No s'ha trobat dades per aquesta població</p>
+}
+

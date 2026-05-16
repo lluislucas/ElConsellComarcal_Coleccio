@@ -1,0 +1,20 @@
+@page "{Identificador}"
+@model ConsellComarcalElRetorn.Pages.DadesDeHabitatge
+
+@if(Model.LlistaPobles != null)
+{
+        <div>
+            <p>...............................................</p>'
+            <h3>Identificador: @Model.LlistaPobles.Identificador</h3>
+            <p>Adreça: @Model.LlistaPobles.Adreça</p>
+            <p>Població: @Model.LlistaPobles.Població</p>
+            <p>Codi Postal: @Model.LlistaPobles.CodiPostal</p>
+            <p>Tipus d'immoble: @Model.LlistaPobles.TipusImmoble</p>
+            <p>Metres quadrats: @Model.LlistaPobles.MetresQuadrats</p>
+            <p>Quantitat de persones que viuen (majors): @Model.LlistaPobles.QuantitatPersonesQueViuenMajors</p>
+            <p>Quantitat de persones que viuen (menors): @Model.LlistaPobles.QuantitatPersonesQueViuenMenors</p>
+            <p>Nom de la persona que paga la taxa: @Model.LlistaPobles.NomPagaTaxa</p>
+            <p>DNI de la persona que paga la taxa: @Model.LlistaPobles.DNIPagaTaxa</p>
+        </div>
+    
+}

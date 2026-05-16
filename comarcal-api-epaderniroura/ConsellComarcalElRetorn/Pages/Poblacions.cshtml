@@ -1,0 +1,15 @@
+@page
+@model  ConsellComarcalElRetorn.Pages.Poblacions;
+@{
+    ViewData ["Title"] = "Poblacions";
+}
+<h1>Llista de Poblacións</h1>
+
+<ul>
+    @foreach (var poble in Model.LlistaPobles)
+    {
+        <li>
+            <a asp-page="/Habitatge" asp-route-Població="@poble"><strong>@poble</strong></a>
+        </li>
+    }
+</ul>

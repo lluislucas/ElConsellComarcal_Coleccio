@@ -1,0 +1,52 @@
+@page "{poblacio}/{dni}"
+@model ConsellComarcalElRetorn.Pages.TaxaContribuent
+@{
+    ViewData["Title"] = "Rebut de la Taxa";
+}
+
+<div class="dades" style="border: 2px solid #333;">
+    <h2 class="text-center">CONSELL COMARCAL</h2>
+    <h4>Taxa Especial sobre els Edificis Comarcals (TEEC)</h4>
+    <br/>
+    
+    <p><strong>Nom: </strong>@Model.NomContribuent</p>
+    <p><strong>Població: </strong>@Model.Població</p>
+    <p><strong>Cases: </strong>@Model.Casa</p>
+    <p><strong>Pisos: </strong>@Model.Pis</p>
+    <p><strong>Terrenys: </strong>@Model.Terreny</p>
+
+    <br/>
+    <table>
+        <thead class="text-center">
+        <tr>
+            <th><p>Tipus d'Immoble</p></th>
+            <th><p>Adreça</p></th>
+            <th><p>Metres m^2</p></th>
+        </tr>
+        </thead>
+        <tbody class="text-center">
+       
+        @foreach (var h in Model.Habitatges)
+        {
+            @* Filtrem perquè només surtin els de la població seleccionada *@
+            if (h.Població == Model.Població)
+            {
+                <tr>
+                    <td>@h.TipusImmoble</td>
+                    <td>@h.Adreça</td>
+                    <td>@h.MetresQuadrats</td>
+                </tr>
+            }
+        }
+        
+        </tbody>
+    </table>
+    <br/>
+    
+    @if (@Model.Mes5persones == true)
+    {
+        <p>Descompte del 10% per consciència social</p>
+    }
+    <br/>
+    <div class="QuotaFinal"><strong>Quota Final: @Model.QuotaFinal €</strong></div>
+</div>
